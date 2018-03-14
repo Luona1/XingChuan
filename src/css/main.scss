@@ -1,0 +1,455 @@
+$primary-color: rgb(153, 11, 18);
+$text-color: #4d4d4d;
+$white: #fff;
+
+
+nav, main, footer {
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0 -1px 10px #ccc;
+  overflow: hidden;
+}
+
+footer {
+  padding-bottom: 10px;
+}
+
+img {
+  border-radius: .35rem;
+}
+h3 {
+  font-size: 1.3rem;
+}
+
+#dialog {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(255, 255, 255, .7);
+  overflow: auto;
+  #contents {
+    margin: 50px auto;
+    max-width: 800px;
+    padding: 50px 30px;
+    box-shadow: 0px 2px 5px #eee, 0px -1px 2px #eee;
+    background-color: #fff;
+    h3 {
+      text-align: center;
+    }
+    li {
+      margin: 0;
+      margin-left: .5rem;
+    }
+    p {
+      margin: 20px 0;
+    }
+    .btn-group {
+      text-align: center;
+      .button {
+        width: 6rem;
+      }
+      button.button {
+        border: 1px solid $primary-color;
+        cursor: pointer;
+        color: $white;
+        background-color: $primary-color;
+        margin-right: 20px;
+      }
+      a.button {
+        &:hover {
+          color: $primary-color;
+          background-color: $white;
+        }
+      }
+    }
+  }
+}
+#banner .dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+}
+
+#banner .dots li { 
+    display: inline-block; 
+    width: 20px; 
+    height: 20px; 
+    margin: 0 4px; 
+    text-indent: -999em; 
+    border: 2px solid #fff; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    opacity: .4; 
+    -webkit-transition: background .5s, opacity .5s; 
+    -moz-transition: background .5s, opacity .5s; 
+    transition: background .5s, opacity .5s;
+}
+
+#banner .dots li.active {
+    background: #fff;
+    opacity: 1;
+}
+
+#banner .arrow {
+  position: absolute;
+  top: 50%;
+  width: 15px;
+  transform: translateY(-100%);
+}
+
+#banner #al {
+  left: 15px;
+}
+
+#banner #ar {
+  right: 15px;
+}
+
+.main-wd {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.xs-nav {
+  min-width: 375;
+  padding: 0 !important;
+  background: rgba(255, 255, 255, .9);
+  li {
+    margin: 0;
+    // padding: .1rem 0;
+    flex: 1;
+  }
+  a {
+    padding: .5rem 0;
+    width: 100%;
+    text-align: center;
+    color: $text-color;
+    display: block;
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  .xs-nav-active {
+    color: $white;
+    background-color: $primary-color;
+  }
+  display: none;
+}
+
+.header {
+  height: 80px;
+  border-bottom: 1px solid #ccc;
+  overflow: hidden;
+  .content {
+    padding: 0px 10px;
+    img {
+      width: 220px;
+    }
+  }
+  .nav a, .login a {
+    min-width: 80px;
+    text-align: center;
+    height: 80px;
+    line-height: 80px;
+    color: $text-color;
+    display: block;
+    &:hover {
+      color: $white;
+      background-color: $primary-color;
+    }
+  }
+  .login a {
+    min-width: 90px;
+    color: $primary-color;
+    &:hover {
+      text-decoration: underline;
+      color: $primary-color;
+      background: transparent;
+    }
+  }
+  .nav {
+    width: 55%;
+    li {
+      margin: 0;
+      flex: 1 1 auto;
+    }
+  }
+}
+
+a.nav-active {
+  color: $white !important;
+  background-color: $primary-color;
+}
+
+.main {
+  position: relative;
+  z-index: 98;
+  padding-top: 80px;
+  .banner {
+    position: relative;
+    z-index: -1;
+    overflow: auto;
+    text-align: center;
+    ul li {
+      float: left;
+      margin: 0;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .section {
+    width: 100%;
+    background-color: $white;
+    &>div {
+      padding: 40px 20px;
+    }
+    &>div:nth-child(even) {
+      background: rgb(245,245,245);
+    }
+    &>div:last-of-type {
+      border-top: 1px solid #eee;
+      background: #fff;
+    }
+    .btn-more {
+      margin: 30px auto;
+      margin-bottom: -10px;
+      text-align: center;
+      line-height: 2em;
+      a {
+        cursor: pointer;
+      }
+    }
+    .btn-more.radius {
+      a {
+        padding: 10px 30px;
+        border: 1px solid;
+        border-radius: 2rem;
+        transition: background-color .5s ease-in-out;
+        &:hover {
+          color: $white;
+          background-color: $primary-color;
+        }
+      }
+    }
+    .button {
+      margin-top: 10px;
+      color: $primary-color;
+      &:hover {
+        color: $white;
+      }
+    }
+    .title, .subtitle {
+      margin-bottom: 1rem;
+      line-height: 2rem;
+      text-align: center;
+      color: $text-color;
+      span {
+        margin: 0 auto;
+        padding-bottom: .25rem;
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+    .subtitle {
+      text-align: left;
+    }
+    .outline {
+      border: 2px solid #ccc;
+    }
+    .section-content {
+      p {
+        font-size: .8rem;
+        color: #aaa;
+        line-height: 2em;
+      }
+    }
+    .card {
+      margin: 10px;
+      padding: 20px;
+      padding-bottom: 30px;
+      min-width: 280px;
+      max-width: 350px;
+      border: 1px solid rgb(238,238,238);
+      border-radius: .75rem;
+      background-color: $white;
+      flex: 1;
+      .title {
+        text-align: left;
+        font-size: 16px;
+        line-height: 1.15;
+      }
+      img {
+        width: 100%;
+        height: 150px;
+        display: block;
+        background-color: #eee;
+      }
+      .small-text {
+        padding-top: 10px;
+        font-size: 12px;
+      }
+      .button {
+        width: 100%;
+        border-radius: .25rem;
+      }
+    }
+    .company-pic {
+      img {
+        width: 100%;
+        height: 240px;
+        display: block;
+        background-color: #eee;
+      }
+    }
+    .company-pic, .company {
+      padding: 0 30px;
+    }
+    .company, .company-pic, .news-introduction, .news-list {
+      margin-bottom: 10px;
+      min-width: 375px;
+      flex: 1;
+    }
+    .small-text {
+      font-size: 12px;
+      color: #aaa;
+      display: inline-block;
+    }
+    .news-introduction {
+      padding: 20px;
+      img {
+        width: 100%;
+        display: block;
+        background-color: #eee;
+      }
+      h2, p, .small-text {
+        margin-top: 1rem;
+      }
+    }
+    .news-list {
+      li {
+        &:hover {
+          background: rgb(245,245,245);
+        }
+      }
+      a {
+        width: 100%;
+        padding: 15px 5px;
+        display: block;
+      }
+    }
+    .news-date {
+      width: 6em;
+      display: inline-block;
+      span {
+        display: block;
+        text-align: right;
+      }
+      &>span:first-of-type {
+        font-size: 2rem;
+        color: $primary-color;
+      }
+      &>span:last-of-type {
+        font-size: 1rem;
+        color: $primary-color;
+      }
+    }
+    .news-content {
+      margin-left: 1rem;
+      width: calc(100% - 7.5rem);
+      display: inline-block;
+      .title {
+        text-align: left;
+        margin-bottom: 5px;
+      }
+      .title, .small-text {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: block;
+      }
+    }
+  }
+}
+
+.footer {
+  font-size: 13px;
+  background-color: $white;
+  &-one {
+    padding: 10px;
+    color: $white;
+    background-color: rgb(83, 83, 83);
+    p {
+      line-height: 2em;
+    }
+  }
+  .copy {
+    margin-top: 10px;
+    text-align: center;
+    color: $text-color;
+    line-height: 2em;
+    cursor: default;
+  }
+  &-one .flex-between, &-one .flex-around {
+    align-items: flex-start;
+  }
+  &-list {
+    &>li:first-of-type {
+      color: $white;
+      margin-bottom: 20px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    a {
+      margin-left: -1px;
+      font-size: 14px;
+      font-weight: 400;
+      color: #aaa;
+      padding: 5px 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color .3s ease-in;
+      &:hover {
+        color: $white;
+        border-color: #ccc;
+      }
+    }
+  }
+}
+.logolist {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  img {
+    max-width: 200px;
+    margin: 20px 10px;
+    &:hover {
+      transform: scale(1.05, 1.05);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  ul.nav {
+    display: none;
+  }
+  ul.xs-nav {
+    display: flex;
+  }
+  .main {
+    padding-top: 112px;
+  }
+}

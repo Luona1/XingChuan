@@ -1,0 +1,82 @@
+$primary-color: rgb(153, 11, 18);
+$text-color: #4d4d4d;
+$white: #fff;
+
+.container.login, .container.register {
+  max-width: 500px;
+  min-height: 400px;
+  background-color: #f4f5f3;
+  box-shadow: none;
+  .title {
+    margin: 15px 0;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .row {
+    position: relative;
+    margin: 1rem auto;
+    max-width: 360px;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i {
+      font-size: 1.1rem;
+      left: 2rem;
+      position: absolute;
+    }
+    input, button, a, select {
+      font-size: .8rem;
+      font-weight: 300;
+      margin: 5px;
+      height: 2.3rem;
+      line-height: 2.3rem;
+      border: none;
+      border-radius: 2rem;
+      padding: 0 10px;
+      flex: 3;
+      &:focus {
+        outline: 0;
+      }
+    }
+    .button {
+      border: 1px solid;
+    }
+    select {
+      border: 1px solid #ccc;
+    }
+    input {
+      padding-left: 3rem;
+      min-width: 100px;
+      background-color: #fff;
+    }
+    button.login-btn, .send {
+      text-align: center;
+      border: 1px solid $primary-color;
+      color: $white;
+      background-color: $primary-color;
+      cursor: pointer;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  .container.login, .container.register {
+    background-color: #fff;
+    .title {
+      margin-left: 22px;
+      text-align: left;
+    }
+    .row {
+      margin: .5rem;
+      input, button, select, {
+        border: 1px solid #ccc;
+        border-radius: 0;
+      }
+      .button, .send {
+        border-radius: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+$primary-color: rgb(153, 11, 18);
+$text-color: #4d4d4d;
+$white: #fff;
+
+html {
+  font-size: 16px;
+  // font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  color: $text-color;
+}
+
+body {
+  font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, 'Microsoft YaHei', sans-serif;
+  font-family: 'Microsoft YaHei';
+}
+
+html, body {
+  height: 100%;
+}
+
+// 格式化标签
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6,
+pre, code, form, fieldset, legend, input, textarea, p, blockquote,
+th, td, hr, button, article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+// 生成 padding margin 
+// 形如 .mt-md .mb-xs .p-none，分为 (m|p)(t|r|b|l)?-(none|xs|sm|md|lg) 这样子的样式规格
+// 定义边距变量
+$help-box-blanks: ('.m': 'margin', '.p': 'padding');
+// 循环，是 margin 还是 padding
+@each $help-box-blank-class, $help-box-blank in $help-box-blanks {
+  // 定义尺寸变量
+  $help-box-sizes: ('-none': 0px, '-xs': 15px, '-sm': 30px, '-md': 40px, '-lg': 50px);
+  // 循环尺寸
+  @each $help-box-size-class, $help-box-size in $help-box-sizes {
+    #{$help-box-blank-class}#{$help-box-size-class} {
+      #{$help-box-blank}: $help-box-size !important;
+    }
+    // 定义方向变量
+    $help-box-directions: ('t': '-top', 'r': '-right', 'b': '-bottom', 'l': '-left');
+    // 循环方向 上、右、下、左
+    @each $help-box-direction-class, $help-box-direction in $help-box-directions {
+      #{$help-box-blank-class}#{$help-box-direction-class}#{$help-box-size-class} {
+        #{$help-box-blank}#{$help-box-direction}: $help-box-size !important;
+      }
+    }
+  }
+}
+
+button, .button {
+  padding: 6px 20px;
+  white-space: nowrap;
+  text-align: center;
+  border: 1px solid;
+  background-color: transparent;
+  display: inline-block;
+  transition: 0.4s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  &:hover {
+    color: $white;
+    border-color: $primary-color;
+    background-color: $primary-color;
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  li {
+    margin: 0 5px;
+  }
+}
+
+span {
+  line-height: 1.15;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+.flex-center,
+.flex-end,
+.flex-start,
+.flex-around,
+.flex-between {
+  display: flex;
+  align-items: center;
+}
+.flex-center {
+  justify-content: center;
+}
+.flex-end {
+  justify-content: flex-end;
+}
+.flex-start {
+  justify-content: flex-start;
+}
+.flex-around {
+  justify-content: space-around;
+}
+.flex-between {
+  justify-content: space-between;
+}
+.flex-top {
+  align-items: flex-start;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
